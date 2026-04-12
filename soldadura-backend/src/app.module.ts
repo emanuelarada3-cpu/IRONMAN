@@ -12,16 +12,29 @@ import { MailModule } from './mail/mail.module';
 import { SettingsService } from './settings/settings.service';
 import { SeedService } from './seed.service';
 
-@Module({
-  imports: [
-    ThrottlerModule.forRoot([{ ttl: 60000, limit: 30 }]),
-    TypeOrmModule.forRoot({
-      type: 'better-sqlite3',
+const dbUrl = process.env.DATABASE_URL;
+
+const dbConfig = dbUrl
+  ? {
+      type: 'postgres' as const,
+      url: dbUrl,
+      entities: [User, Job, Setting],
+      synchronize: true,
+      logging: false,
+      ssl: { rejectUnauthorized: false },
+    }
+  : {
+      type: 'better-sqlite3' as const,
       database: process.env.DB_PATH || 'soldadura.sqlite',
       entities: [User, Job, Setting],
       synchronize: true,
       logging: false,
-    }),
+    };
+
+@Module({
+  imports: [
+    ThrottlerModule.forRoot([{ ttl: 60000, limit: 30 }]),
+    TypeOrmModule.forRoot(dbConfig),
     TypeOrmModule.forFeature([User]),
     AuthModule,
     UsersModule,

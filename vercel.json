@@ -1,0 +1,33 @@
+{
+  "version": 2,
+  "builds": [
+    {
+      "src": "soldadura-frontend/dist/soldadura-frontend/browser",
+      "use": "@vercel/static"
+    },
+    {
+      "src": "soldadura-backend",
+      "use": "@vercel/nest"
+    }
+  ],
+  "routes": [
+    {
+      "src": "/api/(.*)",
+      "dest": "soldadura-backend"
+    },
+    {
+      "handle": "filesystem"
+    },
+    {
+      "src": "/(.*)",
+      "dest": "soldadura-frontend/dist/soldadura-frontend/browser/index.html"
+    }
+  ],
+  "env": {
+    "DATABASE_URL": "@database_url",
+    "MAIL_USER": "@mail_user",
+    "MAIL_PASS": "@mail_pass",
+    "JWT_SECRET": "@jwt_secret"
+  },
+  "regions": ["scl"]
+}
