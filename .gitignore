@@ -1,10 +1,10 @@
 # Dependencies
 node_modules/
 
-# Build outputs
-dist/
-.angular/
-*/dist/
+# Build outputs (commented to allow dist commit)
+# dist/
+# .angular/
+# */dist/
 
 # Logs
 *.log
