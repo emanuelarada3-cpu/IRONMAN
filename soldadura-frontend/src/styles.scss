@@ -1,0 +1,212 @@
+/* ================================================
+   SOLDADURA LAS TUNAS — Global Styles
+   ================================================ */
+
+@import url('https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap');
+
+/* --- Variables --- */
+:root {
+  --fire-orange: #e67e22;
+  --fire-dark: #d35400;
+  --deep-navy: #0a0e27;
+  --dark-bg: #1a1a2e;
+  --card-bg: #16213e;
+  --lighter-bg: #1f3058;
+  --text-primary: #f0f0f0;
+  --text-muted: #8899bb;
+  --border: rgba(230, 126, 34, 0.25);
+  --success: #27ae60;
+  --warning: #f39c12;
+  --danger: #e74c3c;
+  --radius: 12px;
+  --shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+}
+
+/* --- Reset --- */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  background: var(--deep-navy);
+  color: var(--text-primary);
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+  font-family: 'Rajdhani', sans-serif;
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+a {
+  color: var(--fire-orange);
+  text-decoration: none;
+}
+a:hover {
+  color: var(--fire-dark);
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+/* --- Utility --- */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 12px 28px;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  font-family: 'Rajdhani', sans-serif;
+  font-weight: 600;
+  font-size: 16px;
+  transition: all 0.3s ease;
+  text-decoration: none;
+  letter-spacing: 0.5px;
+}
+.btn-primary {
+  background: linear-gradient(135deg, var(--fire-orange), var(--fire-dark));
+  color: #fff;
+  box-shadow: 0 4px 15px rgba(230, 126, 34, 0.4);
+}
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(230, 126, 34, 0.6);
+  color: #fff;
+}
+.btn-outline {
+  background: transparent;
+  border: 2px solid var(--fire-orange);
+  color: var(--fire-orange);
+}
+.btn-outline:hover {
+  background: var(--fire-orange);
+  color: #fff;
+}
+.btn-sm {
+  padding: 8px 18px;
+  font-size: 14px;
+}
+.btn-danger {
+  background: var(--danger);
+  color: #fff;
+}
+.btn-success {
+  background: var(--success);
+  color: #fff;
+}
+
+/* --- Forms --- */
+.form-group {
+  margin-bottom: 20px;
+}
+.form-group label {
+  display: block;
+  margin-bottom: 6px;
+  font-weight: 500;
+  color: var(--text-primary);
+  font-size: 14px;
+}
+.form-control {
+  width: 100%;
+  padding: 12px 16px;
+  border-radius: 8px;
+  background: var(--card-bg);
+  border: 1.5px solid var(--border);
+  color: var(--text-primary);
+  font-size: 15px;
+  transition: border-color 0.3s;
+  font-family: 'Inter', sans-serif;
+}
+.form-control:focus {
+  outline: none;
+  border-color: var(--fire-orange);
+}
+.form-control::placeholder {
+  color: var(--text-muted);
+}
+
+/* --- Card --- */
+.card {
+  background: var(--card-bg);
+  border-radius: var(--radius);
+  border: 1px solid var(--border);
+  padding: 24px;
+  box-shadow: var(--shadow);
+}
+
+/* --- Badge status --- */
+.badge {
+  display: inline-flex;
+  padding: 4px 12px;
+  border-radius: 20px;
+  font-size: 13px;
+  font-weight: 600;
+}
+.badge-pending {
+  background: rgba(243, 156, 18, 0.2);
+  color: var(--warning);
+}
+.badge-in_progress {
+  background: rgba(52, 152, 219, 0.2);
+  color: #3498db;
+}
+.badge-completed {
+  background: rgba(39, 174, 96, 0.2);
+  color: var(--success);
+}
+.badge-cancelled {
+  background: rgba(231, 76, 60, 0.2);
+  color: var(--danger);
+}
+
+/* --- Scrollbar --- */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: var(--dark-bg);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--fire-orange);
+  border-radius: 3px;
+}
+
+/* --- AOS override --- */
+[data-aos] {
+  pointer-events: none;
+}
+[data-aos].aos-animate {
+  pointer-events: auto;
+}
+
+/* --- Leaflet overrides --- */
+.leaflet-container {
+  border-radius: var(--radius);
+  font-family: 'Inter', sans-serif;
+}

@@ -1,0 +1,150 @@
+/* Login Component Styles */
+
+.auth-page {
+  min-height: 100vh;
+  background: linear-gradient(135deg, var(--deep-navy), var(--dark-bg));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+  padding-top: 100px;
+}
+
+.auth-container {
+  width: 100%;
+  max-width: 450px;
+}
+
+.auth-card {
+  background: var(--card-bg);
+  border-radius: 16px;
+  border: 1px solid var(--border);
+  padding: 40px;
+  box-shadow: var(--shadow);
+}
+
+.auth-header {
+  text-align: center;
+  margin-bottom: 30px;
+  h1 {
+    font-size: 28px;
+    margin-bottom: 8px;
+  }
+  p {
+    color: var(--text-muted);
+    font-size: 0.95rem;
+  }
+}
+
+.auth-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  label {
+    margin-bottom: 6px;
+    font-weight: 500;
+    font-size: 14px;
+  }
+}
+
+.form-control {
+  padding: 12px 16px;
+  border-radius: 8px;
+  background: var(--dark-bg);
+  border: 1.5px solid var(--border);
+  color: var(--text-primary);
+  font-size: 15px;
+  transition: border-color 0.3s;
+  font-family: 'Inter', sans-serif;
+  &:focus {
+    outline: none;
+    border-color: var(--fire-orange);
+  }
+  &::placeholder {
+    color: var(--text-muted);
+  }
+}
+
+.otp-input {
+  font-size: 28px;
+  letter-spacing: 8px;
+  text-align: center;
+  font-weight: 700;
+  font-family: 'Courier New', monospace;
+}
+
+.error {
+  color: var(--danger);
+  font-size: 12px;
+  margin-top: 4px;
+}
+
+.alert {
+  padding: 12px 16px;
+  border-radius: 8px;
+  font-size: 14px;
+  &.alert-danger {
+    background: rgba(231, 76, 60, 0.15);
+    color: var(--danger);
+    border: 1px solid rgba(231, 76, 60, 0.3);
+  }
+  &.alert-dev {
+    background: rgba(39, 174, 96, 0.15);
+    color: #2ecc71;
+    border: 1px solid rgba(39, 174, 96, 0.4);
+    font-size: 15px;
+    strong {
+      font-size: 18px;
+      letter-spacing: 4px;
+    }
+  }
+}
+
+.btn-link {
+  background: none;
+  border: none;
+  color: var(--fire-orange);
+  cursor: pointer;
+  font-size: 13px;
+  text-decoration: underline;
+  &:hover {
+    color: var(--fire-dark);
+  }
+}
+
+.otp-header {
+  text-align: center;
+  margin-bottom: 24px;
+  p {
+    color: var(--text-muted);
+    margin-bottom: 8px;
+  }
+  .email-display {
+    color: var(--fire-orange);
+    font-weight: 600;
+    font-size: 15px;
+  }
+}
+
+.otp-note {
+  text-align: center;
+  color: var(--text-muted);
+  font-size: 13px;
+  margin-top: -8px;
+}
+
+.auth-footer {
+  text-align: center;
+  margin-top: 24px;
+  color: var(--text-muted);
+  font-size: 14px;
+  a {
+    color: var(--fire-orange);
+    text-decoration: underline;
+  }
+}
